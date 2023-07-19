@@ -1,0 +1,22 @@
+class Solution {
+    public int sumOddLengthSubarrays(int[] arr) {
+        int sum = 0;
+        for ( int i = 0; i < arr.length; i++){
+          for ( int j = i+1; j < arr.length; j++){
+              int n = i +j;
+              if ( n % 2 == 0){// is at odd place
+                   sum = sum + help(arr,i,j);
+              }
+          }
+            sum = sum + arr[i];
+        }
+        return sum;
+    }
+     static int help  ( int []arr, int i , int j){
+        int sum = 0;
+        for ( int k = i;  k <= j; k++){
+            sum = sum + arr[k];
+        }
+        return sum;
+    }
+}
