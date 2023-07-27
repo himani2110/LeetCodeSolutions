@@ -1,0 +1,15 @@
+class Solution {
+    public int maximumNumberOfStringPairs(String[] words) {
+        int count = 0;
+        for(int i = 0; i < words.length - 1; i++){
+           StringBuilder temp = new StringBuilder(words[i]);
+           String temp1 = new StringBuilder(temp).reverse().toString();
+           for(int j = i+1; j < words.length; j++){
+               if(temp1.compareTo(words[j]) == 0){
+                   count++;
+               }
+           } 
+        }
+        return count;
+    }
+}
