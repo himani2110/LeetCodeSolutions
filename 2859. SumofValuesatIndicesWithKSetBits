@@ -1,0 +1,24 @@
+class Solution {
+    public boolean checkIndices(int i, int k){
+        String num = Integer.toBinaryString(i);
+        int count = 0;
+        for(int j = 0; j < num.length(); j++){
+            if(num.charAt(j) == '1'){
+                count++;
+            }
+        }
+        if(count == k){
+            return true;
+        }
+        return false;
+    }
+    public int sumIndicesWithKSetBits(List<Integer> nums, int k) {
+        int count = 0;
+        for(int i = 0; i < nums.size(); i++){
+            if(checkIndices(i, k)){
+                count+=nums.get(i);
+            }
+        }
+        return count;
+    }
+}
