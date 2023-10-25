@@ -1,0 +1,17 @@
+class OrderedStream {
+    public String newStr[];
+    public int ptr = 0;
+    public OrderedStream(int n) {
+        newStr = new String[n];
+    }
+    
+    public List<String> insert(int idKey, String value) {
+        newStr[idKey-1] = value;
+        List<String> longestChunk = new ArrayList<String>();
+        while(ptr < newStr.length && newStr[ptr]!=null){
+            longestChunk.add(newStr[ptr]);
+            ptr++;
+        }
+        return longestChunk;
+    }
+}
