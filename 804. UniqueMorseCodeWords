@@ -1,0 +1,29 @@
+class Solution {
+    public static String mapping[] = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+    public String changeToMorseCode(String input){
+        String result = "";
+        for(int i = 0; i < input.length(); i++){
+            int temp = (int)(input.charAt(i) - 'a');
+            result+=mapping[temp];
+        }
+        return result;
+    }
+    public int uniqueMorseRepresentations(String[] words) {
+        for(int i = 0; i < words.length; i++){
+            words[i] = changeToMorseCode(words[i]);
+        }
+        if(words.length == 1){
+            return 1;
+        }
+        int count = 0;
+        HashSet<String> set = new HashSet<String>();
+        for(int i = 0; i < words.length; i++){
+            if(set.contains(words[i]));
+            else{
+                count++;
+                set.add(words[i]);
+            }
+        }
+        return count;
+    }
+}
