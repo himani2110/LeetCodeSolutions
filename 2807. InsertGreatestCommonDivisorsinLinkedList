@@ -1,0 +1,21 @@
+class Solution {
+    public int greatestCommonDivisor(int currNode, int nextNode){
+        if(nextNode == 0){
+            return currNode;
+        }
+        return greatestCommonDivisor(nextNode, currNode%nextNode);
+    }
+    public ListNode insertGreatestCommonDivisors(ListNode head) {
+        ListNode currNode = head;
+        while(currNode.next != null){
+            ListNode nextNode = currNode.next;
+            ListNode newNode = new ListNode();
+            newNode.val = greatestCommonDivisor(currNode.val, nextNode.val);
+            currNode.next = newNode;
+            newNode.next = nextNode;
+            currNode = nextNode;
+            nextNode = nextNode.next;
+        }
+        return head;
+    }
+}
