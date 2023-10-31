@@ -1,0 +1,16 @@
+class Solution {
+    public List<String> cellsInRange(String s) {
+        List<String> list = new ArrayList<String>();
+        char start = s.charAt(1);
+        char startChar = s.charAt(0);
+        while(startChar <= s.charAt(3)){
+            while(start <= s.charAt(4)){
+                list.add(startChar +""+ start);
+                start++;
+            }
+            start = s.charAt(1);
+            startChar++;
+        }
+        return list;
+    }
+}
