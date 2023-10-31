@@ -1,0 +1,11 @@
+class Solution {
+    public int xorOperation(int n, int start) {
+        int sum = 0;
+        n = n -1; 
+        while(n >= 0){
+            sum^=(start + 2 * n);
+            n--;
+        }
+        return sum;
+    }
+}
