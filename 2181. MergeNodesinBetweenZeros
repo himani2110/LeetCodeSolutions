@@ -1,0 +1,22 @@
+class Solution {
+    public ListNode mergeNodes(ListNode head) {
+        ListNode newList = new ListNode();
+        ListNode newcurr = newList;
+        int count = 0;
+        ListNode curr = head.next;
+        while(curr!=null){
+            if(curr.val == 0){
+                ListNode res=new ListNode(count);
+                newcurr.next = res;
+                newcurr=newcurr.next;
+                count = 0;
+            }
+            else{
+                count+=curr.val;
+                curr=curr.next;
+            }
+            
+        }
+        return newList.next;
+    }
+}
