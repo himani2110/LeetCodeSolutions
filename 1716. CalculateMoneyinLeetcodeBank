@@ -1,0 +1,26 @@
+class Solution {
+    public int countMoney(int n, int j){
+        if(n == 0){
+            return 0;
+        }
+        return j + countMoney(n - 1, j+1);
+    }
+    public int totalMoney(int n) {
+        int j = 1;
+        int sum = 0;
+        if(n <= 7){
+           return countMoney(n, j);
+        }
+        else{
+            while(n >= 7){
+                sum+=countMoney(7, j);
+                j++;
+                n = n - 7;
+            }
+            if(n != 0){
+                sum+=countMoney(n, j);
+            }
+        }
+        return sum;
+    }
+}
