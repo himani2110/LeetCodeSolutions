@@ -19,8 +19,7 @@ class Solution {
         }
         double result = 0;
         if(arr.length%2 == 0){
-            float k = arr[arr.length/2-1] + arr[arr.length/2];
-            result = k/2;
+            result = (arr[arr.length/2-1] + arr[arr.length/2])/(float)2;
         }
         else{
             result = arr[arr.length/2];
