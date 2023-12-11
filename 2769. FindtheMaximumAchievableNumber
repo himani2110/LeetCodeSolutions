@@ -1,0 +1,8 @@
+class Solution {
+    public int theMaximumAchievableX(int num, int t) {
+        return num+2*t;
+    }
+}
+
+//This approach works on basic maths because to get the highest number in given steps would be double the steps added to the number.
+//As to make it equal in every iteration we could add 1 in n and subtract 1 from x which would make an addition of 2 in number in one step
